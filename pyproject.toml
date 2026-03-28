@@ -1,0 +1,20 @@
+[project]
+name = "mimir"
+version = "0.1.0"
+description = "AI Agent for product knowledge built on Norns."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "norns-sdk",
+]
+
+[project.scripts]
+mimir-worker = "mimir.worker:main"
+mimir-client = "mimir.client:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv.sources]
+norns-sdk = { path = "../norns-sdk-python", editable = true }
