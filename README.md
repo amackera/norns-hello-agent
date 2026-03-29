@@ -40,20 +40,51 @@ Keeping it simple:
 
 Details in [docs/v0-plan.md](docs/v0-plan.md) and [docs/design.md](docs/design.md).
 
-## Setup
+## Quickstart
+
+### Prerequisites
 
 - Python 3.14+
+- [uv](https://docs.astral.sh/uv/) package manager
 - [Norns](https://github.com/amackera/norns) running locally (`docker compose up`)
-- `ANTHROPIC_API_KEY`
+
+### Environment
+
+Create a `.env` file (loaded automatically via direnv):
+
+```sh
+NORNS_API_KEY=<your norns api key>
+ANTHROPIC_API_KEY=<your anthropic api key>
+```
+
+### Install
+
+```sh
+uv sync
+```
+
+### Run
+
+Start the worker (blocks forever, connects to Norns via WebSocket):
+
+```sh
+uv run mimir-worker
+```
+
+In another terminal, send a message via the client:
+
+```sh
+uv run mimir-client
+```
 
 ## Status
 
-Design and planning done. Implementation not started yet.
+Project scaffolded with a hello-bot reference agent. Core knowledge tools not yet implemented.
 
 Next up:
-1. Wire up the worker + client with `norns-sdk`
-2. Build markdown loader + `search_knowledge` tool
-3. Build `/remember` + `search_memory` tool
+1. Build markdown loader + `search_knowledge` tool
+2. Build `/remember` + `search_memory` tool
+3. Wire up CLI ingress with conversation support
 
 ## License
 
