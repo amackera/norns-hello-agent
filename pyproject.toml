@@ -1,7 +1,7 @@
 [project]
-name = "mimir"
+name = "hello-agent"
 version = "0.1.0"
-description = "AI Agent for product knowledge built on Norns."
+description = "Hello-world agent built on Norns."
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
@@ -9,8 +9,8 @@ dependencies = [
 ]
 
 [project.scripts]
-mimir-worker = "mimir.worker:main"
-mimir-client = "mimir.client:main"
+hello-worker = "hello.worker:main"
+hello-client = "hello.client:main"
 
 [build-system]
 requires = ["hatchling"]

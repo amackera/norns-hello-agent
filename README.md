@@ -30,13 +30,13 @@ uv sync
 Start the worker:
 
 ```sh
-uv run mimir-worker
+uv run hello-worker
 ```
 
 In another terminal, send a message via the client:
 
 ```sh
-uv run mimir-client
+uv run hello-client
 ```
 
 ## License
