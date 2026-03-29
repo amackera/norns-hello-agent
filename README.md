@@ -6,7 +6,7 @@ A simple hello-world agent on [Norns](https://github.com/amackera/norns). Demons
 
 ### Prerequisites
 
-- Python 3.14+
+- Python 3.10+
 - [uv](https://docs.astral.sh/uv/) package manager
 - [Norns](https://github.com/amackera/norns) running locally (`docker compose up`)
 
