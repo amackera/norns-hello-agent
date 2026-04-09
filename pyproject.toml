@@ -12,6 +12,9 @@ dependencies = [
 hello-worker = "hello.worker:main"
 hello-client = "hello.client:main"
 
+[tool.hatch.build.targets.wheel]
+packages = ["hello"]
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
