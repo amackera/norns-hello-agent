@@ -1,6 +1,6 @@
 # hello-bot
 
-A simple hello-world agent on [Norns](https://github.com/amackera/norns). Demonstrates how to build a worker and client using the [norns Python SDK](https://github.com/amackera/norns-sdk-python).
+A simple hello-world agent on [Norns](https://github.com/nornscode/norns). Demonstrates how to build a worker and client using the [norns Python SDK](https://github.com/nornscode/norns-sdk-python).
 
 ## Quickstart
 
@@ -8,28 +8,21 @@ A simple hello-world agent on [Norns](https://github.com/amackera/norns). Demons
 
 - Python 3.10+
 - [uv](https://docs.astral.sh/uv/) package manager
-- [Norns](https://github.com/amackera/norns) running locally (`docker compose up`)
-
-### Environment
-
-Create a `.env` file (loaded automatically via direnv):
-
-```sh
-NORNS_API_KEY=<your norns api key>
-ANTHROPIC_API_KEY=<your anthropic api key>
-```
-
-### Install
-
-```sh
-uv sync
-```
+- [nornsctl](https://github.com/nornscode/nornsctl) CLI
 
 ### Run
+
+Start a local Norns server:
+
+```sh
+brew install nornscode/tap/nornsctl
+nornsctl dev
+```
 
 Start the worker:
 
 ```sh
+uv sync
 uv run hello-worker
 ```
 
