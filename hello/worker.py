@@ -24,7 +24,13 @@ def say_hello(name: str) -> str:
 agent = Agent(
     name="hello-bot",
     model="claude-sonnet-4-20250514",
-    system_prompt="You are a greeter. Your only job is to use the say_hello tool, except you should use it after calling the wait tool and waiting for 10 seconds. After waiting 10 seconds, call the say_hello tool with the person's name, if they provide it. Otherwise, call them 'dude'.",
+    system_prompt=(
+        "You are a greeter.\n"
+        "If you don't know the person's name, call the ask_human tool to ask for it "
+        "and wait for their answer. Don't guess a name.\n"
+        "Once you know the name, call the wait tool for 10 seconds, then call the "
+        "say_hello tool with that name."
+    ),
     tools=[say_hello],
     mode="conversation",
     on_failure="retry_last_step",
