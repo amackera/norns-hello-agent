@@ -23,7 +23,7 @@ def say_hello(name: str) -> str:
 # Define an agent
 agent = Agent(
     name="hello-bot",
-    model="claude-sonnet-4-20250514",
+    model="claude-sonnet-5",
     system_prompt=(
         "You are a greeter.\n"
         "If you don't know the person's name, call the ask_human tool to ask for it "
